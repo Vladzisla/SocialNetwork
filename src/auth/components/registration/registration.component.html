@@ -1,0 +1,31 @@
+<h1>Registration</h1>
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmitted()" >
+  <div class="form-group">
+    <div><label for="email">E-mail</label></div>
+    <input id="email" type="email" class="form-control" formControlName="email">
+  </div>
+  <div class="form-group">
+    <div><label for="login">Login</label></div>
+    <input #login id="login" type="text" class="form-control" formControlName="login">
+  </div>
+  <div class="form-group">
+    <div><label for="password">Password</label></div>
+    <input #pass id="password" type="password" class="form-control" formControlName="password">
+  </div>
+  <div class="form-group">
+    <div><label for="repeat-password">Repeat password</label></div>
+    <input #passRep id="repeat-password" type="password" class="form-control" formControlName="passwordRep">
+  </div>
+  <div *ngIf="this.registrationForm.errors" class="alert">Passwords are mismatch</div>
+  <div class="form-group">
+    <div><label for="firstName">Name</label></div>
+    <input id="firstName" type="text" class="form-control" formControlName="firstName">
+  </div>
+  <div class="form-group">
+    <div><label for="secondName">Surname</label></div>
+    <input id="secondName" type="text" class="form-control" formControlName="secondName">
+  </div>
+  <input type="submit" [disabled]="sendDisable" value="Send">
+</form>
+<div *ngIf="message$ | async as message">{{message.message}}</div>
+
