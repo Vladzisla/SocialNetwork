@@ -29,6 +29,7 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(30)])
     });
     this.loginForm.statusChanges.subscribe((status) => this.sendDisable = status === 'INVALID');
+    this.localStorageService.remove('token');
   }
   onSubmitted(): void{
     const body: UserLogin = {
@@ -42,11 +43,9 @@ export class LoginComponent implements OnInit {
 
       if (data.token && data.user){
         this.localStorageService.set('token', data.token);
-        this.router.navigate(['/wall']);
+        this.router.navigate([`/wall/${data.user.id}`]);
         this.userAuthService.setLoggedIn(data.user.role);
       }
-
-
     });
   }
 

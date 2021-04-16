@@ -5,7 +5,7 @@ import {UserAuthGuard} from '../user-auth.guard';
 
 const routes: Routes = [
   {
-    path: 'wall' , component: WallComponent, canActivate: [UserAuthGuard]
+    path: 'wall/:id' , component: WallComponent, canActivate: [UserAuthGuard]
   }
 ];
 
