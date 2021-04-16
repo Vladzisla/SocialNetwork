@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {UserAuthService} from '../../../services/user-auth.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Observable} from 'rxjs';
-import {UserRegistration} from '../../interfaces/user-registration';
 import {UserLogin} from '../../interfaces/user-login';
 import {LocalStorageService} from '../../../services/local-storage.service';
 import {Router} from '@angular/router';
@@ -15,8 +14,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private userAuthService: UserAuthService, private localStorageService: LocalStorageService, private router: Router) {
-  }
+  constructor(private userAuthService: UserAuthService, private localStorageService: LocalStorageService, private router: Router) { }
 
   loginForm: FormGroup;
   message$: Observable<any>;
@@ -48,5 +46,4 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-
 }

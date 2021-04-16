@@ -15,13 +15,13 @@ export class UserAuthService {
 
   constructor(private readonly http: HttpClient, private localStorageService: LocalStorageService) { }
 
-  getLoggedIn(): Observable<any>{
-    const headers = new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': `Bearer ${this.localStorageService.get('token')}`
-    });
-    return this.http.get(`http://localhost:3000/users/auth-check`, {headers});
-  }
+  // getLoggedIn(): Observable<any>{
+  //   const headers = new HttpHeaders({
+  //     'Content-Type':  'application/json',
+  //     'Authorization': `Bearer ${this.localStorageService.get('token')}`
+  //   });
+  //   return this.http.get(`http://localhost:3000/users/auth-check`, {headers});
+  // }
 
   setLoggedIn(value: boolean | string): void{
     this.loggedInStatus = value;

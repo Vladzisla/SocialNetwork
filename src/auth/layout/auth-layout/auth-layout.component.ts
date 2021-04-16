@@ -10,8 +10,11 @@ import {UserAuthService} from '../../../services/user-auth.service';
 })
 export class AuthLayoutComponent implements OnInit {
 
-  // tslint:disable-next-line:max-line-length
-  constructor(private localStorageService: LocalStorageService, private router: Router, private userService: UserAuthService, private route: ActivatedRoute) { }
+  constructor(private localStorageService: LocalStorageService,
+              private router: Router,
+              private userService: UserAuthService,
+              private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
    //  this.route.params.subscribe(params => {
@@ -25,7 +28,6 @@ export class AuthLayoutComponent implements OnInit {
    //
    // });
   }
-
     // if (this.localStorageService.get('token')){
     //   this.userService.getLoggedIn().subscribe(data => {
     //     this.userService.setLoggedIn(data.role);
