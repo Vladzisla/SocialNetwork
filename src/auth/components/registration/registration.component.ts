@@ -2,7 +2,7 @@ import {Component, OnInit, Renderer2} from '@angular/core';
 import {Observable} from 'rxjs';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {UserRegistration} from '../../interfaces/user-registration';
-import {UserService} from '../../../services/user.service';
+import {UserAuthService} from '../../../services/user-auth.service';
 
 
 @Component({
@@ -11,7 +11,7 @@ import {UserService} from '../../../services/user.service';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  constructor(private userService: UserService, private rd: Renderer2) {  }
+  constructor(private userService: UserAuthService, private rd: Renderer2) {  }
   registrationForm: FormGroup;
   message$: Observable<any>;
   public sendDisable = true;

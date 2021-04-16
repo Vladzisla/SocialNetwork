@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {WallComponent} from './components/wall/wall.component';
+import {UserAuthGuard} from '../user-auth.guard';
 
 const routes: Routes = [
   {
-    path: 'wall' , component: WallComponent
+    path: 'wall' , component: WallComponent, canActivate: [UserAuthGuard]
   }
 ];
 

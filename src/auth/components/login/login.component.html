@@ -2,11 +2,11 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmitted()" >
   <div class="form-group">
     <div><label for="login">Login</label></div>
-    <input #login id="login" type="text" class="form-control" formControlName="login">
+    <input id="login" type="text" class="form-control" formControlName="login">
   </div>
   <div class="form-group">
     <div><label for="password">Password</label></div>
-    <input #pass id="password" type="password" class="form-control" formControlName="password">
+    <input id="password" type="password" class="form-control" formControlName="password">
   </div>
   <input type="submit" [disabled]="sendDisable" value="Send">
 </form>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserAuthService} from '../../../services/user-auth.service';
 
 @Component({
   selector: 'app-wall',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WallComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserAuthService) { }
 
   ngOnInit(): void {
   }

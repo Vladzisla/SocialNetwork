@@ -1,15 +1,25 @@
 import { Injectable } from '@angular/core';
 import {UserRegistration} from '../auth/interfaces/user-registration';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {UserLogin} from '../auth/interfaces/user-login';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class UserAuthService {
+
+  private loggedInStatus: boolean | string = false;
 
   constructor(private readonly http: HttpClient) { }
+
+  setLoggedIn(value: boolean | string): void{
+    this.loggedInStatus = value;
+  }
+
+  get isLoggedIn(): boolean | string{
+    return this.loggedInStatus;
+  }
 
   createUser(user: UserRegistration): Observable<any>{
     return this.http.post(`http://localhost:3000/users/registration`, user);
